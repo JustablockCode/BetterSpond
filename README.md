@@ -8,4 +8,4 @@ A better Spond experience.
 2. Run `npm run setup` to initialize the project structure.
 3. Run `npm start` to start the server.
 
-Visit http://localhost:3000 to see the modified Spond page.
+Window will pop up with modified spond.
