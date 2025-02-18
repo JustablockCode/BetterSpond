@@ -1,0 +1,14 @@
+{
+  "name": "betterspond",
+  "version": "0.0.1",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "justablock",
+  "license": "UNLICENSED",
+  "description": "A better Spond experience",
+  "dependencies": {
+    "electron": "^34.0.2"
+  }
+}

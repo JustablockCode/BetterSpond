@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Dark Mode",
+    "version": "0.0.1 WIP BETA",
+    "logo": "../assets/darkmode.png",
+    "shortDescription": "Dark mode plugin.",
+    "fullDescription": "This plugin adds dark mode to website. Currently its indev and not(most of) styles are still white mode.",
+    "author": "justablock",
+    "link": "hhttps://github.com/JustablockCode",
+    "enabled": true,
+    "script": "./plugins/DarkMode.js"
+  }
+]
