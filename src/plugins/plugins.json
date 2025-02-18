@@ -7,7 +7,7 @@
     "fullDescription": "This plugin adds dark mode to website. Currently its indev and not(most of) styles are still white mode.",
     "author": "justablock",
     "link": "hhttps://github.com/JustablockCode",
-    "enabled": true,
+    "enabled": false,
     "script": "./plugins/DarkMode.js"
   }
 ]
