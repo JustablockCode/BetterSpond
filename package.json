@@ -9,6 +9,6 @@
   "license": "UNLICENSED",
   "description": "A better Spond experience",
   "dependencies": {
-    "electron": "^34.0.2"
+    "electron": "^34.2.0"
   }
 }
