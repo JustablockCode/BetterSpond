@@ -1,19 +1,18 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
-
     directory: "/"
-
     schedule:
       interval: "daily"
-
-    automerged_updates:
-      - match:
-          dependency_type: "production"
-          update_type: "security"
-      - match:
-          dependency_type: "production"
-          update_type: "minor"
-      - match:
-          dependency_type: "development"
-          update_type: "patch"
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+    commit-message:
+      prefix: "chore(deps)"
+    rebase-strategy: "auto"
+    reviewers:
+      - "JustablockCode"
+    assignees:
+      - "JustablockCode"
+    automerge:
+      merge-method: "squash"
