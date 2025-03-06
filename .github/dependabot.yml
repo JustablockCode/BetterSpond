@@ -1,18 +1,9 @@
 version: 2
 updates:
+  # Enable version updates for npm
   - package-ecosystem: "npm"
+    # Look for `package.json` and `lock` files in the `root` directory
     directory: "/"
+    # Check the npm registry for updates every day (weekdays)
     schedule:
       interval: "daily"
-    open-pull-requests-limit: 10
-    labels:
-      - "dependencies"
-    commit-message:
-      prefix: "chore(deps)"
-    rebase-strategy: "auto"
-    reviewers:
-      - "JustablockCode"
-    assignees:
-      - "JustablockCode"
-    automerge:
-      merge-method: "squash"
