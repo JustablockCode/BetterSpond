@@ -5,6 +5,9 @@ console.log('Preload script is running');
 
 let initialPluginsData = [];
 
+const appVersion = "0.0.1-beta.1";
+const electronVersion = process.versions.electron;
+
 // script is in root_of_project/src/preload.js
 async function getPlugins() {
   try {
@@ -57,7 +60,7 @@ function openPluginsPopup() {
 
     const popupHtml = `
       <div class="plugins-modal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: flex-start; z-index: 9999; overflow-y: auto;">
-        <div class="plugins-modal-content" style="background-color: white; border-radius: 4px; width: 90%; max-width: 800px; max-height: 90vh; overflow-y: auto; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); margin-top: 5vh;">
+        <div class="plugins-modal-content" style="background-color: white; border-radius: 4px; width: 90%; max-width: 800px; max-height: 90vh; overflow-y: auto; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); margin-top: 5vh; position: relative;">
           <div class="plugins-modal-header" style="display: flex; justify-content: space-between; align-items: center; padding: 8px 16px; border-bottom: 1px solid #e0e0e0; background-color: #f5f5f5;">
             <div style="flex: 1;"></div>
             <h3 class="plugins-modal-title" style="font-size: 14px; font-weight: bold; margin: 0; color: #333; text-align: center; flex: 1;">Plugins</h3>
@@ -70,6 +73,15 @@ function openPluginsPopup() {
           </div>
           <div class="plugins-modal-body" style="padding: 16px;">
             ${pluginsListHtml}
+          </div>
+          <div class="plugins-modal-footer" style="display: flex; justify-content: space-between; align-items: center; padding: 8px 16px; border-top: 1px solid #e0e0e0; background-color: #f5f5f5; position: absolute; bottom: 0; left: 0; right: 0;">
+            <div style="flex: 1; display: flex; justify-content: flex-start; align-items: center; font-size: 12px; color: #666;">
+              <span>App Version: ${appVersion}</span>
+              <span style="margin-left: 8px;">Electron Version: ${electronVersion}</span>
+            </div>
+            <div style="flex: 1; display: flex; justify-content: flex-end;">
+              <button class="plugins-modal-close" style="background: none; border: none; font-size: 18px; cursor: pointer; color: #666;">&times;</button>
+            </div>
           </div>
         </div>
       </div>
@@ -183,6 +195,7 @@ function openPluginDetailPopup(plugin) {
   });
 }
 
+
 function updatePluginStatus(pluginName, isEnabled) {
   getPlugins().then(pluginsData => {
     const plugin = pluginsData.find(p => p.name === pluginName);
@@ -194,6 +207,7 @@ function updatePluginStatus(pluginName, isEnabled) {
     }
   });
 }
+
 
 function waitForElement(selector) {
   return new Promise(resolve => {
@@ -248,6 +262,18 @@ window.addEventListener('DOMContentLoaded', () => {
       margin-top: 8px;
       transform: scale(1.2);
       accent-color: #2196F3;
+    }
+    .plugins-modal-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 16px;
+      border-top: 1px solid #e0e0e0;
+      background-color: #f5f5f5;
     }
   `;
   document.head.appendChild(style);
