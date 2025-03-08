@@ -1,0 +1,17 @@
+{
+  "appId": "com.yourcompany.betterspond",
+  "productName": "BetterSpond",
+  "copyright": "Copyright © 2024",
+  "directories": {
+    "output": "dist"
+  },
+  "win": {
+    "target": ["nsis", "msi"],
+    "icon": "src/assets/spond_1.ico"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowElevation": true,
+    "allowToChangeInstallationDirectory": true
+  }
+}
