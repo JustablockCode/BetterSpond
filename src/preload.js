@@ -17,10 +17,7 @@ async function getPlugins() {
 
     pluginsData.forEach(plugin => {
       if (plugin.logo && !plugin.logo.startsWith('http')) {
-        const imagePath = path.resolve(__dirname, 'plugins', plugin.logo);
-        if (!fs.existsSync(imagePath)) {
-          console.warn(`Warning: Image not found - ${imagePath}`);
-        }
+        console.warn(`Warning: Plugin logo URL is not valid - ${plugin.logo}`);
       }
     });
 

@@ -1,12 +1,12 @@
 {
-  "appId": "com.yourcompany.betterspond",
+  "appId": "com.justablock.betterspond",
   "productName": "BetterSpond",
   "copyright": "Copyright © 2024",
   "directories": {
     "output": "dist"
   },
   "win": {
-    "target": ["nsis", "msi"],
+    "target": ["nsis"],
     "icon": "src/assets/spond_1.ico"
   },
   "nsis": {
