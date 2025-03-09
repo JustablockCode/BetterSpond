@@ -18,10 +18,9 @@ async function getPlugins() {
     pluginsData.forEach(plugin => {
       if (plugin.logo && !plugin.logo.startsWith('http')) {
         const imagePath = path.resolve(__dirname, 'plugins', plugin.logo);
-        const imageData = fs.readFileSync(imagePath);
-        const base64Image = imageData.toString('base64');
-        const mimeType = path.extname(imagePath).toLowerCase() === '.png' ? 'image/png' : 'image/jpeg';
-        plugin.logo = `data:${mimeType};base64,${base64Image}`;
+        if (!fs.existsSync(imagePath)) {
+          console.warn(`Warning: Image not found - ${imagePath}`);
+        }
       }
     });
 
@@ -32,7 +31,6 @@ async function getPlugins() {
     return [];
   }
 }
-
 
 function executePluginScript(scriptPath) {
   try {
