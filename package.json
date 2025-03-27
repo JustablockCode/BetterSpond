@@ -11,7 +11,7 @@
   "description": "A better Spond experience.",
   "dependencies": {
     "electron": "^35.1.0",
-    "electron-builder": "^25.1.8",
+    "electron-builder": "^26.0.12",
     "electron-packager": "^17.1.2"
   }
 }
