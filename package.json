@@ -10,7 +10,7 @@
   "license": "UNLICENSED",
   "description": "A better Spond experience.",
   "dependencies": {
-    "electron": "^35.1.3",
+    "electron": "^35.1.4",
     "electron-builder": "^26.0.12",
     "electron-packager": "^17.1.2"
   }
